@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Geo Task</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_whence_fragment">Whence</string>
+    <string name="hello_where_fragment">Where</string>
 </resources>

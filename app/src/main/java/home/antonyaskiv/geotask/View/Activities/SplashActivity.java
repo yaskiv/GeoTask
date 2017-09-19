@@ -1,4 +1,4 @@
-package home.antonyaskiv.geotask;
+package home.antonyaskiv.geotask.View.Activities;
 
 import android.app.Activity;
 import android.content.Intent;

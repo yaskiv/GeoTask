@@ -3,10 +3,6 @@
 
     <item
         android:drawable="@color/red"/>
-    <item>
-        <bitmap
-            android:gravity="center"
-        android:src="@mipmap/ic_launcher_round" />
-    </item>
+
 
 </layer-list>
