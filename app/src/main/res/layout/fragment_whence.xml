@@ -5,7 +5,10 @@
     android:orientation="vertical"
     tools:context="home.antonyaskiv.geotask.View.Fragments.WhenceFragment">
 
-<EditText
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <EditText
     android:id="@+id/whence_edit_text"
     android:layout_width="100dp"
     android:layout_height="wrap_content"
@@ -13,6 +16,12 @@
     android:textColor="#0b0b0b"
 
     />
+     <Button
+        android:id="@+id/search_of_button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+></Button>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list_of_3_elements"
