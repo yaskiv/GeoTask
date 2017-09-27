@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import javax.inject.Inject;
+
+import home.antonyaskiv.geotask.Application.App;
 import home.antonyaskiv.geotask.Presenter.HomePresenter;
 import home.antonyaskiv.geotask.Presenter.Interface.IHomePresenter;
 import home.antonyaskiv.geotask.R;
@@ -22,6 +25,8 @@ public class HomeActivity extends AppCompatActivity  {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    @Inject
+    HomePresenter homePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +34,8 @@ public class HomeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_home);
 
 
-
-
+        App.getAppComponent().inject(this);
+homePresenter.Search("DzialoForHome");
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);

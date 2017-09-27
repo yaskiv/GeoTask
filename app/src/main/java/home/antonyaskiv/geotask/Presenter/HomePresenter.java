@@ -1,13 +1,9 @@
 package home.antonyaskiv.geotask.Presenter;
 
+import android.content.Context;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 
 import home.antonyaskiv.geotask.Presenter.Interface.IHomePresenter;
-import home.antonyaskiv.geotask.R;
-import home.antonyaskiv.geotask.View.Activities.Interface.IHomeActivity;
-import home.antonyaskiv.geotask.View.Fragments.WhenceFragment;
 
 
 /**
@@ -15,17 +11,19 @@ import home.antonyaskiv.geotask.View.Fragments.WhenceFragment;
  */
 
 public class HomePresenter implements IHomePresenter {
-    final WhenceFragment iHomeActivity;
-    public HomePresenter(WhenceFragment iHomeActivity)
-    {
-        this.iHomeActivity=iHomeActivity;
+    final Context iHomeActivity;
+
+    public HomePresenter(Context iHomeActivity) {
+        this.iHomeActivity = iHomeActivity;
     }
+
     @Override
     public void Search(String text) {
 
 
-        text=text+"Yes";
-        iHomeActivity.setText(text);
+        text = text + "Yes";
+        Log.d("DagDorAnd", text);
+        // iHomeActivity.setText(text);
 
     }
 }
