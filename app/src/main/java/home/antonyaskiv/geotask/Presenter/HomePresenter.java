@@ -23,7 +23,6 @@ public class HomePresenter implements IHomePresenter {
 
         text = text + "Yes";
         Log.d("DagDorAnd", text);
-        // iHomeActivity.setText(text);
 
     }
 }

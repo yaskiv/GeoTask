@@ -1,6 +1,6 @@
 package home.antonyaskiv.geotask.API;
 
-import android.database.Observable;
+
 
 import home.antonyaskiv.geotask.Model.WayPoints;
 import retrofit2.Call;
@@ -14,5 +14,6 @@ import retrofit2.http.Query;
 public interface WayMapAPI {
     @GET("maps/api/directions/json?")
     Call<WayPoints> getWayFromCoordinate(@Query("origin")String from, @Query("destination") String to, @Query("key") String api_key);
+
 
 }

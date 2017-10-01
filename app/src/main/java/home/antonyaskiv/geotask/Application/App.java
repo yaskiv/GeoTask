@@ -3,7 +3,7 @@ package home.antonyaskiv.geotask.Application;
 import android.app.Application;
 
 import home.antonyaskiv.geotask.Components.DaggerAppComponent;
-import home.antonyaskiv.geotask.Modules.AppModul;
+import home.antonyaskiv.geotask.Modules.AppModule;
 import home.antonyaskiv.geotask.Components.AppComponent;
 
 /**
@@ -26,7 +26,7 @@ public class App extends Application {
     protected AppComponent buildComponent()
     {
         return DaggerAppComponent.builder()
-                .appModul(new AppModul(this))
+                .appModul(new AppModule(this))
                 .build();
     }
 }

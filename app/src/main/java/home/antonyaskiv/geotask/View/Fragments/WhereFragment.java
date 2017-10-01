@@ -13,9 +13,6 @@ import home.antonyaskiv.geotask.R;
 
 public class WhereFragment extends Fragment {
 
-    public WhereFragment() {
-        // Required empty public constructor
-    }
 
 
 

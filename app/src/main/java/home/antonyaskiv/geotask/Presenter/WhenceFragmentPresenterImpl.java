@@ -12,7 +12,7 @@ import home.antonyaskiv.geotask.View.Fragments.WhenceFragment;
  * Created by AntonYaskiv on 27.09.2017.
  */
 
-public class WhenceFragmentPresentrImpl implements IWhenceFragmentPresenter {
+public class WhenceFragmentPresenterImpl implements IWhenceFragmentPresenter {
 
     private final Context context;
     private WhenceFragment fragment;
@@ -20,7 +20,7 @@ public class WhenceFragmentPresentrImpl implements IWhenceFragmentPresenter {
     {
         this.fragment=fragment;
     }
-    public WhenceFragmentPresentrImpl(Context context)
+    public WhenceFragmentPresenterImpl(Context context)
     {
         this.context=context;
     }
