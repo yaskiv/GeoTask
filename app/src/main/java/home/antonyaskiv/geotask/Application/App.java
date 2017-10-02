@@ -26,7 +26,7 @@ public class App extends Application {
     protected AppComponent buildComponent()
     {
         return DaggerAppComponent.builder()
-                .appModul(new AppModule(this))
+                .appModule(new AppModule(this))
                 .build();
     }
 }

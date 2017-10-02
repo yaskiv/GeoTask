@@ -36,8 +36,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import home.antonyaskiv.geotask.Application.App;
+import home.antonyaskiv.geotask.Presenter.ListAddressPresenter;
 import home.antonyaskiv.geotask.Presenter.WhenceFragmentPresenterImpl;
 import home.antonyaskiv.geotask.R;
+import home.antonyaskiv.geotask.View.Activities.HomeActivity;
 import home.antonyaskiv.geotask.View.Adapters.ListOf3ElementsAdapter;
 
 
@@ -56,22 +58,26 @@ public class WhenceFragment extends Fragment {
     MapView mMapView;
     private GoogleMap googleMap;
     private List<Address> listOfAddress;
+    ListAddressPresenter listAddressPresenter=new ListAddressPresenter();
     View.OnClickListener ButClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+        listOfAddress=listAddressPresenter.getListOfAddress(
+                getContext(),
+                text.getText().toString());
             listView.setAdapter(
-                    new ListOf3ElementsAdapter(
+                    new ListOf3ElementsAdapter
+                            (
                             getContext(),
-                            getListFromGeocoderToAdapter(
-                                    getContext(),
-                                    text.getText().toString()
+                                    listAddressPresenter.getListFromGeocoderToAdapter
+                                    (listOfAddress
                             )
                     )
             );
 
         }
     };
+
 
     private AdapterView.OnItemClickListener ItemClick = new AdapterView.OnItemClickListener() {
         @Override
@@ -100,21 +106,7 @@ public class WhenceFragment extends Fragment {
         }
     };
 
-    @NonNull
-    private List<String> getListFromGeocoderToAdapter(Context context, String place) {
-        List<String> list = new ArrayList<>();
-        Geocoder geocoder = new Geocoder(context);
-        try {
-            listOfAddress = geocoder.getFromLocationName(place, 7);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for (Address address : listOfAddress) {
-            String text = address.getAddressLine(0) + " , " + address.getAddressLine(1);
-            list.add(text);
-        }
-        return list;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

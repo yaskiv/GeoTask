@@ -1,12 +1,19 @@
 package home.antonyaskiv.geotask.View.Activities;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,9 +38,10 @@ public class HomeActivity extends AppCompatActivity {
     HomePresenter homePresenter;
 
     @BindView(R.id.tabs)
-    private TabLayout tabLayout;
+     TabLayout tabLayout;
     @BindView(R.id.viewpager)
-    private ViewPager viewPager;
+     ViewPager viewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
