@@ -6,5 +6,6 @@
     <string name="hello_whence_fragment">Whence</string>
     <string name="hello_where_fragment">Where</string>
 
-    <string name="API_Map">AIzaSyBlu5vw2Uk9jXz_9oGItjnQcsy6yXdHomw</string>
+    <string name="API_Map">AIzaSyDhuKHTIpzO4g6mu7Mdf8VTFt8g79pH--U"</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

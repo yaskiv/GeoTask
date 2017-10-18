@@ -2,6 +2,7 @@ package home.antonyaskiv.geotask.View.Fragments;
 
 import android.content.Context;
 import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -46,13 +47,14 @@ public class WhereFragment extends Fragment {
     Unbinder unbinder;
     private GoogleMap googleMap;
     private  List<Address> listOfAddress;
+    private Geocoder geocoder;
     ListAddressPresenter listAddressPresenter=new ListAddressPresenter();
     View.OnClickListener butClick=new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             listOfAddress= listAddressPresenter
                             .getListOfAddress
-                                    (getContext(),
+                                    (geocoder,
                             whereEditText.getText().toString());
             listOf3ElementsWhere.setAdapter(
                     new ListOf3ElementsAdapter
@@ -94,7 +96,7 @@ public class WhereFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        geocoder=new Geocoder(getContext());
     }
 
     @Override

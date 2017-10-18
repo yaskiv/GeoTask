@@ -50,6 +50,8 @@ public class HomeActivityTest {
         onView(withId(R.id.search_of_button_where)).perform(click());
         onView(withId(R.id.list_of_3_elements_where)).check(matches(Matchers.withListSize(7)));
     }
+
+
     private static ViewAction swipeFromTopRightToTopLeft() {
         return new GeneralSwipeAction(Swipe.FAST, GeneralLocation.TOP_RIGHT,
                 GeneralLocation.TOP_LEFT, Press.FINGER);

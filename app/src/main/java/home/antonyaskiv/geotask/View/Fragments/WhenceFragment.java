@@ -58,12 +58,13 @@ public class WhenceFragment extends Fragment {
     MapView mMapView;
     private GoogleMap googleMap;
     private List<Address> listOfAddress;
+    private Geocoder geocoder;
     ListAddressPresenter listAddressPresenter=new ListAddressPresenter();
     View.OnClickListener ButClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         listOfAddress=listAddressPresenter.getListOfAddress(
-                getContext(),
+                geocoder,
                 text.getText().toString());
             listView.setAdapter(
                     new ListOf3ElementsAdapter
@@ -111,6 +112,7 @@ public class WhenceFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        geocoder=new Geocoder(getContext());
         App.getAppComponent().inject(this);
     }
 

@@ -14,10 +14,10 @@ import java.util.List;
  */
 
 public class ListAddressPresenter {
-    public List<Address> getListOfAddress(Context context, String place)
+    public List<Address> getListOfAddress(Geocoder geocoder, String place)
     {
         List<Address> addressList=new ArrayList<>();
-        Geocoder geocoder = new Geocoder(context);
+
         try {
             addressList=  geocoder.getFromLocationName(place, 7);
         } catch (IOException e) {
